@@ -1,5 +1,5 @@
-var month = parseInt(prompt("Enter months number(1 to 12) : "));
-var season = "";
+let month = parseInt(prompt("Enter months number(1 to 12) : "));
+let season = "";
 
 switch(month){
     case 1 :
@@ -24,4 +24,4 @@ switch(month){
         season = "Invalid Season";
         break;
 }
-console.log("Season : " + season);
+document.write("Season : " + season);

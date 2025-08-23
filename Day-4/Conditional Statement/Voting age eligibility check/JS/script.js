@@ -1,4 +1,4 @@
-var age = parseInt(prompt("Enter your age : "));
+let age = parseInt(prompt("Enter your age : "));
 
 if(age < 18){
     console.log("Sorry you are not eligible for vote...");

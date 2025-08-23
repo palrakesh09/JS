@@ -5,15 +5,14 @@
 // * * * * 
 // * * * * * 
 
-var n = 5;
+let n = 5;
 
-console.log("First Pattern");
-for(var i = 1; i <= n; i++){
-    var row = "";
-    for(var j = 1; j <= i; j++){
-        row = row + "* ";
+document.write("First Pattern" + "<br>");
+for(let i = 1; i <= n; i++){
+    for(let j = 1; j <= i; j++){
+        document.write("* ")
     }
-    console.log(row);
+    document.write("<br>");
 }
 
 // Enter rows for Hollow Right-Angled Triangle: 5
@@ -23,17 +22,16 @@ for(var i = 1; i <= n; i++){
 // *     * 
 // * * * * * 
 
-console.log("Second Pattern");
-for(var i = 1; i <= n; i++){
-    var row = "";
-    for(var j = 1; j <= i; j++){
+document.write("Second Pattern" + "<br>");
+for(let i = 1; i <= n; i++){
+    for(let j = 1; j <= i; j++){
         if(j === 1 || j === i || i === n){
-            row = row + "* ";
+            document.write("* ");
         }else{
-            row = row + " ";
+            document.write("&nbsp;&nbsp;&nbsp;");
         }
     }
-    console.log(row);
+    document.write("<br>");
 }
 
 // Enter rows for Inverted Right-Angled Triangle: 5
@@ -43,13 +41,12 @@ for(var i = 1; i <= n; i++){
 // * * 
 // * 
 
-console.log("Third Pattern");
-for(var i = n; i >= 1; i--){
-    var row = "";
-    for(var j = 1; j <= i; j++){
-        row = row + "* ";
+document.write("Third Pattern" + "<br>");
+for(let i = n; i >= 1; i--){
+    for(let j = 1; j <= i; j++){
+        document.write("* ")
     }
-    console.log(row);
+    document.write("<br>");
 }
 
 // Enter rows for Hollow Inverted Right-Angled Triangle: 6
@@ -60,111 +57,117 @@ for(var i = n; i >= 1; i--){
 // * * 
 // * 
 
-console.log("Fourth Pattern");
+document.write("Fourth Pattern" + "<br>");
 for( i = n; i >= 1; i--){
-    var row = "";
-    for(var j = 1; j <= i; j++){
+    for(let j = 1; j <= i; j++){
         if(j === 1 || j === i || i === n){
-            row = row + "* ";
+            document.write("* ");
         }else{
-            row = row + " ";
+            document.write("&nbsp;&nbsp;&nbsp;");
         }
     }
-    console.log(row);
+    document.write("<br>");
 }
 
-// Enter rows for Left-Aligned Triangle: 5
+// Enter rows for right-Aligned Triangle: 5
 //         * 
 //       * * 
 //     * * * 
 //   * * * * 
 // * * * * * 
 
-console.log("Fifth Pattern");
-for(var i = 1; i <= n; i++){
-    var row = "";
-    row = row + " ".repeat((n-i) * 2);
-    row = row + "* ".repeat(i);
-    console.log(row);
+document.write("Fifth Pattern" + "<br>");
+for(let i = 1; i <= n; i++){
+    for(let s = 1; s <= n-i; s++){
+        document.write("&nbsp;&nbsp;&nbsp;")
+    }
+    for(let j = 1; j <= i; j++){
+        document.write("* ");
+    }
+    document.write("<br>")
 }
 
-// Enter rows for Hollow Left-Aligned Triangle: 5
+// Enter rows for Hollow right-Aligned Triangle: 5
 //         * 
 //       * * 
 //     *   * 
 //   *     * 
 // * * * * * 
 
-console.log("Sixth Pattern");
-for(let i = 1; i <= n; i++) {
-    let row = " ".repeat((n - i) * 2);
-    for(let j = 1; j <= i; j++) {
-        if(j === 1 || j === i || i === n) {
-            row = row + "* ";
-        } else {
-            row = row + "  ";
+document.write("Sixth Pattern" + "<br>");
+for(let i = 1; i <= n; i++){
+    for(let s = 1; s <= n-i; s++){
+        document.write("&nbsp;&nbsp;&nbsp;");
+    }
+    for(let j = 1; j <= i; j++){
+        if(j === 1 || j === i || i === n){
+            document.write("* ");
+        }else{
+            document.write("&nbsp;&nbsp;&nbsp;");
         }
     }
-    console.log(row);
+    document.write("<br>");
 }
 
-// Enter rows for Pyramid Pattern:  5
+// Enter rows for Classic Pyramid Pattern:  5
 //         * 
 //       * * * 
 //     * * * * * 
 //   * * * * * * * 
 // * * * * * * * * * 
 
-console.log("Seventh Pattern");
-for(let i = 1; i <= n; i++) {
-    let row = "";
-
-    row = row + "  ".repeat(n - i);
-    row = row + "* ".repeat(i * 2 - 1);
-
-    console.log(row);
+document.write("Seventh Pattern" + "<br>");
+for(let i = 1; i <= n; i++){
+    for(let s = 1; s <= n-i; s++){
+        document.write("&nbsp;&nbsp;&nbsp;");
+    }
+    for(let j = 1; j <= (2*i-1); j++){
+        document.write("* ");
+    }
+    document.write("<br>");
 }
 
-// Enter rows for Inverted Pyramid Pattern: 5
+// Enter rows for Inverted Classic Pyramid Pattern: 5
 // * * * * * * * * * 
 //   * * * * * * * 
 //     * * * * * 
 //       * * * 
 //         * 
 
-console.log("Eighth Pattern");
-for(let i = n; i >= 1; i--) {
-    let row = "";
-
-    row += "  ".repeat(n - i);
-    row += "* ".repeat(i * 2 - 1);   
-
-    console.log(row);
+document.write("Eighth Pattern" + "<br>");
+for(let i = n; i >= 1; i--){
+    for(let s = 1; s <= n-i; s++){
+        document.write("&nbsp;&nbsp;&nbsp;");
+    }
+    for(let j = 1; j <= (2*i-1); j++){
+        document.write("* ");
+    }
+    document.write("<br>");
 }
 
-// Enter rows for Hollow Pyramid Pattern: 5
+// Enter rows for Classic Hollow Pyramid Pattern: 5
 //         * 
 //       *   * 
 //     *       * 
 //   *           * 
 // * * * * * * * * * 
 
-console.log("Ninth Pattern");
-for(let i = 1; i <= n; i++) {
-    let row = "";
-
-    row += "  ".repeat(n - i);
-
-    for(let j = 1; j <= 2 * i - 1; j++) {
-        if(j === 1 || j === 2 * i - 1 || i === n) {
-            row += "* ";
-        } else {
-            row += "  ";
-        }
+document.write("Ninth Pattern" + "<br>");
+  for (let i = 1; i <= n; i++) {
+    for (let s = 1; s <= n - i; s++) {
+      document.write("&nbsp;&nbsp;&nbsp;");
     }
 
-    console.log(row);
-}
+    for (let j = 1; j <= (2 * i - 1); j++) {
+      if (j === 1 || j === (2 * i - 1) || i === n) {
+        document.write("* ");
+      } else {
+        document.write("&nbsp;&nbsp;&nbsp;");
+      }
+    }
+
+    document.write("<br>");
+  }
 
 // Enter rows for Diamond Pattern: 5
 //         * 
@@ -177,21 +180,24 @@ for(let i = 1; i <= n; i++) {
 //       * * * 
 //         * 
 
-console.log("Tenth Pattern");
-for(let i = 1; i <= n; i++) {
-    let row = "";
+document.write("Tenth Pattern" + "<br>");
+  for (let i = 1; i <= n; i++) {
+    for (let s = 1; s <= n - i; s++) {
+      document.write("&nbsp;&nbsp;&nbsp;");
+    }
+    for (let j = 1; j <= (2 * i - 1); j++) {
+      document.write("* ");
+    }
+    document.write("<br>");
+  }
 
-    row += "  ".repeat(n - i);
-    row += "* ".repeat(2 * i - 1);
+  for (let i = n - 1; i >= 1; i--) {
+    for (let s = 1; s <= n - i; s++) {
+      document.write("&nbsp;&nbsp;&nbsp;");
+    }
+    for (let j = 1; j <= (2 * i - 1); j++) {
+      document.write("* ");
+    }
+    document.write("<br>");
+  }
 
-    console.log(row);
-}
-
-for(let i = n - 1; i >= 1; i--) {
-    let row = "";
-
-    row += "  ".repeat(n - i);
-    row += "* ".repeat(2 * i - 1);
-
-    console.log(row);
-}

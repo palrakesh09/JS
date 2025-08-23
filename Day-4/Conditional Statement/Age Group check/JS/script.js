@@ -1,4 +1,4 @@
-var age = parseInt(prompt("Enter your age : "));
+let age = parseInt(prompt("Enter your age : "));
 
 if(age < 0){
     console.log("Please enter a valid age...");
@@ -17,6 +17,6 @@ if(age < 0){
         group = "Old";
     }
 
-    console.log("Age : " + age);
-    console.log("you belong to : " + group);
+    document.write("Age : " + age + "<br>");
+    document.write("you belong to : " + group);
 }

@@ -1,110 +1,98 @@
-// Enter the number of rows: 5
+// Number triangle Pattern
 // 1 
 // 1 2 
 // 1 2 3 
 // 1 2 3 4 
 // 1 2 3 4 5 
 
-var n = 5;
+let n = 5;
 
-console.log("First Pattern");
-var output = "";
-
-for(var i = 1; i <= n; i++){
-    for(var j = 1; j <= i; j++){
-        output = output + j + " ";
+document.write("First Pattern" + "<br>");
+for(let i = 1; i <= n; i++){
+    for(let j = 1; j <= i; j++){
+      document.write(j + " ");
     }
-    output = output + "\n";
+    document.write("<br>")
 }
-console.log(output);
 
-// Enter the number of rows: 5
+// Inverted Number triangle Pattern
 // 1 2 3 4 5 
 // 1 2 3 4 
 // 1 2 3 
 // 1 2 
 // 1 
 
-output = "";
-
-console.log("Second Pattern");
-for(var i = n; i >= 1; i--){
-    for(var j = 1; j <= i; j++){
-        output = output + j + " ";
+document.write("Second Pattern" + "<br>");
+  for (let i = n; i >= 1; i--) {
+    for (let j = 1; j <= i; j++) {
+      document.write(j + " ");
     }
-    output = output + "\n";
-}
-console.log(output);
+    document.write("<br>");
+  }
 
-// Enter the number of rows: 5
+// Number pyramid Pattern
 //         1 
 //       1 2 1 
 //     1 2 3 2 1 
 //   1 2 3 4 3 2 1 
 // 1 2 3 4 5 4 3 2 1 
 
-output = "";
+document.write("Third Pattern" + "<br>");
+  for (let i = 1; i <= n; i++) {
+    for (let s = 1; s <= n - i; s++) {
+      document.write("&nbsp;&nbsp;&nbsp;");
+    }
 
-console.log("Third Pattern");
-for (let i = 1; i <= n; i++) {
-  output += "  ".repeat(n - i); 
+    for (let j = 1; j <= i; j++) {
+      document.write(j + " ");
+    }
 
-  for (let j = 1; j <= i; j++) {
-    output += j + " ";
+    for (let j = i - 1; j >= 1; j--) {
+      document.write(j + " ");
+    }
+
+    document.write("<br>");
   }
 
-  for (let j = i - 1; j >= 1; j--) {
-    output += j + " ";
-  }
-
-  output += "\n";
-}
-
-console.log(output);
-
-// Enter the number of rows: 4
+// continuous number triangle Pattern
 // 1 
 // 2 3 
 // 4 5 6 
 // 7 8 9 10 
 // 11 12 13 14 15
 
-output = "";
-var num = 1;
+let num = 1;
 
-console.log("Fourth Pattern");
-for (let i = 1; i <= n; i++) {
-  for (let j = 1; j <= i; j++) {
-    output += num + " ";
-    num++; 
+document.write("Fourth Pattern" + "<br>");
+  for (let i = 1; i <= n; i++) {
+    for (let j = 1; j <= i; j++) {
+      document.write(num + " ");
+      num++;
+    }
+    document.write("<br>");
   }
-  output += "\n";
-}
-console.log(output);
 
-// Enter the number of rows: 5
+// right-aligned number triangle Pattern
 //         1 
 //       2 1 
 //     3 2 1 
 //   4 3 2 1 
 // 5 4 3 2 1 
 
-output = "";
+document.write("Fifth Pattern" + "<br>");
+  for (let i = 1; i <= n; i++) {
+    for (let s = 1; s <= n - i; s++) {
+      document.write("&nbsp;&nbsp;&nbsp;");
+    }
 
-console.log("Fifth Pattern");
-for (let i = 1; i <= n; i++) {
-  output += "  ".repeat(n - i);  
+    for (let j = i; j >= 1; j--) {
+      document.write(j + " ");
+    }
 
-  for (let j = i; j >= 1; j--) {
-    output += j + " ";
+    document.write("<br>");
   }
 
-  output += "\n";
-}
-
-console.log(output);
-
-// Enter the number of rows (for half diamond): 5
+// diamond-shaped number pyramid Pattern
 //         1 
 //       1 2 1 
 //     1 2 3 2 1 
@@ -115,125 +103,117 @@ console.log(output);
 //       1 2 1 
 //         1 
 
-output = "";
+document.write("Sixth Pattern" + "<br>");
+  for (let i = 1; i <= n; i++) {
+    for (let s = 1; s <= n - i; s++) {
+      document.write("&nbsp;&nbsp;&nbsp;");
+    }
 
-console.log("Sixth Pattern");
-for (let i = 1; i <= n; i++) {
-  output += "  ".repeat(n - i); 
+    for (let j = 1; j <= i; j++) {
+      document.write(j + " ");
+    }
 
-  for (let j = 1; j <= i; j++) {
-    output += j + " ";
+    for (let j = i - 1; j >= 1; j--) {
+      document.write(j + " ");
+    }
+
+    document.write("<br>");
   }
 
-  for (let j = i - 1; j >= 1; j--) {
-    output += j + " ";
+  for (let i = n - 1; i >= 1; i--) {
+    for (let s = 1; s <= n - i; s++) {
+      document.write("&nbsp;&nbsp;&nbsp;");
+    }
+
+    for (let j = 1; j <= i; j++) {
+      document.write(j + " ");
+    }
+
+    for (let j = i - 1; j >= 1; j--) {
+      document.write(j + " ");
+    }
+
+    document.write("<br>");
   }
 
-  output += "\n";
-}
-
-for (let i = n - 1; i >= 1; i--) {
-  output += "  ".repeat(n - i);
-
-  for (let j = 1; j <= i; j++) {
-    output += j + " ";
-  }
-
-  for (let j = i - 1; j >= 1; j--) {
-    output += j + " ";
-  }
-
-  output += "\n";
-}
-
-console.log(output);
-
-// Enter the number of rows: 5
+// pascal's triangle pattern
 //      1 
 //     1 1 
 //    1 2 1 
 //   1 3 3 1 
 //  1 4 6 4 1 
 
-output = "";
+document.write("Seventh Pattern" + "<br>");
+  for (let i = 0; i < n; i++) {
+    for (let s = 1; s <= n - i; s++) {
+      document.write("&nbsp;&nbsp;");
+    }
 
-console.log("Seventh Pattern");
-for (let i = 0; i < n; i++) {
-  let val = 1;
-  output += " ".repeat(n - i);
-  for (let j = 0; j <= i; j++) {
-    output += val + " ";
-    val = val * (i - j) / (j + 1);
+    let value = 1;
+    for (let j = 0; j <= i; j++) {
+      document.write(value + "&nbsp;&nbsp;");
+
+      value = value * (i - j) / (j + 1);
+    }
+
+    document.write("<br>");
   }
-  output += "\n";
-}
-console.log(output);
 
-// Enter the number of rows: 5
+
+// inverted number palindrome pyramid pattern
 // 1 2 3 4 5 4 3 2 1 
 //   1 2 3 4 3 2 1 
 //     1 2 3 2 1 
 //       1 2 1 
 //         1 
 
+document.write("Eighth Pattern" + "<br>");
+  for (let i = n; i >= 1; i--) {
+    for (let s = 1; s <= n - i; s++) {
+      document.write("&nbsp;&nbsp;&nbsp;");
+    }
 
-output = "";
+    for (let j = 1; j <= i; j++) {
+      document.write(j + " " );
+    }
 
-console.log("Eighth Pattern");
-for (let i = n; i >= 1; i--) {
-  output += "  ".repeat(n - i); 
+    for (let j = i - 1; j >= 1; j--) {
+      document.write(j + " ");
+    }
 
-  for (let j = 1; j <= i; j++) {
-    output += j + " ";
+    document.write("<br>");
   }
 
-  for (let j = i - 1; j >= 1; j--) {
-    output += j + " ";
+// number square pattern
+// 1 2 3 4 5 
+// 1 2 3 4 5 
+// 1 2 3 4 5 
+// 1 2 3 4 5 
+// 1 2 3 4 5 
+
+document.write("Ninth Pattern" + "<br>");
+  for (let i = 1; i <= n; i++) {
+    for (let j = 1; j <= n; j++) {
+      document.write(j + " ");
+    }
+    document.write("<br>");
   }
 
-  output += "\n";
-}
-
-console.log(output);
-
-// Enter the size of the square: 5
-// 1 2 3 4 5 
-// 1 2 3 4 5 
-// 1 2 3 4 5 
-// 1 2 3 4 5 
-// 1 2 3 4 5 
-
-output = "";
-
-console.log("Ninth Pattern");
-for (let i = 1; i <= n; i++) {
-  for (let j = 1; j <= n; j++) {
-    output += j + " ";
-  }
-  output += "\n";
-}
-console.log(output);
-
-// Enter the size of the square: 5
+// hollow square number pattern
 // 1 1 1 1 1 
 // 2       2 
 // 3       3 
 // 4       4 
 // 5 5 5 5 5 
 
-
-output = "";
-
-console.log("Tenth Pattern");
-for (let i = 1; i <= n; i++) {
-  for (let j = 1; j <= n; j++) {
-    if (i === 1 || i === n || j === 1 || j === n) {
-      output += i + " ";
-    } else {
-      output += "  ";
+document.write("Tenth Pattern" + "<br>");
+  for (let i = 1; i <= n; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (i === 1 || i === n || j === 1 || j === n) {
+        document.write(i + " ");
+      } else {
+        document.write("&nbsp;&nbsp;&nbsp;");
+      }
     }
+    document.write("<br>");
   }
-  output += "\n";
-}
-
-console.log(output);

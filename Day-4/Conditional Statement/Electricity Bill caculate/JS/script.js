@@ -15,5 +15,5 @@ if(units > 150){
     bill + bill * 0.20;
 }
 
-console.log("units consumed : " + units);
-console.log("Total Bill Amount : " + bill.toFixed(2));
+document.write("units consumed : " + units + "<br>");
+document.write("Total Bill Amount : " + bill.toFixed(2));
