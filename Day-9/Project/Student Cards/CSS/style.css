@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0061FF;
+}
+p{
+    text-align: start;
+    padding-left: 30px;
+    padding-bottom: 5px;
+    font-size: 20px;
+
+}
+
+.students-informations {
+    margin: 0 auto;
+}
+
+.students-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 15px;
+    text-align: center;
+}
+
+.card {
+    width: 350px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    -webkit-transition: .1s ease-in-out;
+    transition: .1s ease-in-out;
+    margin: 20px 20px;
+    padding-bottom: 40px;
+}
+
+.card:hover {
+    margin-top: -10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.banner {
+    height: 150px;
+    width: 100%;
+    padding-top: 30px;
+    background-color: #FAFAFA;
+    background-size: cover;
+    background-position: center;
+}
+
+.card .banner {
+    background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKM6rRET9CTBdVhMPRZIYaT3fHRVVEoIAZ9D3lR9da2ZlTlRdoK1X7E9mOcp7cNWP912Cq-fkhmdpD6byoX5EoDNkOHaoZa0xKcOx-ccCWxNU8Mr9TabV6dnRPqdhMD4T0EwbcX0Alxp9Z-85RRY_T8fynoHjQI38wuQcnTfwJL88JiGYW2x6jkmDR/s1600/bg-new-1.jpg");
+}
+
+.avatar {
+    height: 100px;
+    width: 100px;
+    margin-top: 60px;
+    margin-left: 120px;
+    background-size: cover;
+    background-position: center;
+    background-color: #F1F1F1;
+    border-radius: 100%;
+}
+
+.card .avatar {
+    background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxivAs4UknzmDfLBXGMxQkayiZDhR2ftB4jcIV7LEnIEStiUyMygioZnbLXCAND-I_xWQpVp0jv-dv9NVNbuKn4sNpXYtLIJk2-IOdWQNpC2Ldapnljifu0pnQqAWU848Ja4lT9ugQex-nwECEh3a96GXwiRXlnGEE6FFF_tKm66IGe3fzmLaVIoNL/s1600/img_avatar.png");
+}
+
+.heading{
+    font-family: "roboto",sans-serif;
+    margin-top: 60px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #212121;
+    padding-right: 12px;
+}
