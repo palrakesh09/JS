@@ -1845,7 +1845,7 @@ function removeFromCart(id) {
 function updateCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
   const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
-  cartValue.textContent = totalQty;
+  cartValue.innerHTML = cart.length;
   cartList.innerHTML = "";
   cart.forEach(item => {
     const row = document.createElement("div");
