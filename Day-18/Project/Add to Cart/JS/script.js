@@ -1815,7 +1815,7 @@ function renderProducts() {
     card.innerHTML = `
       <img src="${product.thumbnail}" alt="${product.title}">
       <h4>${product.title}</h4>
-      <p class="price">$${product.price.toFixed(2)}</p>
+      <p class="price">Rs${product.price.toFixed(2)}</p>
       <a href="#" class="btn add-btn" data-id="${product.id}">Add to Cart</a>
     `;
     productsContainer.appendChild(card);
@@ -1854,7 +1854,7 @@ function updateCart() {
       <div class="item-image"><img src="${item.thumbnail}" alt="${item.title}"></div>
       <div style="flex:1">
         <h4>${item.title}</h4>
-        <h4 class="item-total">$${(item.price * item.quantity).toFixed(2)}</h4>
+        <h4 class="item-total">Rs${(item.price * item.quantity).toFixed(2)}</h4>
       </div>
       <div class="flex">
         <a href="#" class="quantity-btn decrease" data-id="${item.id}"><i class="fa-solid fa-minus"></i></a>
@@ -1866,7 +1866,7 @@ function updateCart() {
     cartList.appendChild(row);
   });
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  cartTotal.textContent = `$${total.toFixed(2)}`;
+  cartTotal.textContent = `Rs${total.toFixed(2)}`;
 }
 
 document.addEventListener("click", (e) => {
