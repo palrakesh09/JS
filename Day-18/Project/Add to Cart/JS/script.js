@@ -1824,12 +1824,15 @@ function renderProducts() {
 renderProducts();
 
 function addToCart(id) {
-  const item = products.find(p => p.id == id);
-  const existing = cart.find(p => p.id == id);
-  if (existing) {
-    existing.quantity++;
+  const productId = Number(id);
+  const existingItem = cart.find(item => item.id === productId);
+  if (existingItem) {
+    existingItem.quantity++;
   } else {
-    cart.push({ ...item, quantity: 1 });
+   const newItem = products.find(item => item.id === productId);
+    if(newItem){
+      cart.push({...newItem, quantity:1});
+    }
   }
   updateCart();
 }
