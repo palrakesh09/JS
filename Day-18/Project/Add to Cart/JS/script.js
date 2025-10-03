@@ -1815,7 +1815,7 @@ function renderProducts() {
     card.innerHTML = `
       <img src="${product.thumbnail}" alt="${product.title}">
       <h4>${product.title}</h4>
-      <p class="price">$${product.price.toFixed(2)}</p>
+      <p class="price">Rs${product.price.toFixed(2)}</p>
       <a href="#" class="btn add-btn" data-id="${product.id}">Add to Cart</a>
     `;
     productsContainer.appendChild(card);
@@ -1824,12 +1824,15 @@ function renderProducts() {
 renderProducts();
 
 function addToCart(id) {
-  const item = products.find(p => p.id == id);
-  const existing = cart.find(p => p.id == id);
-  if (existing) {
-    existing.quantity++;
+  const productId = Number(id);
+  const existingItem = cart.find(item => item.id === productId);
+  if (existingItem) {
+    existingItem.quantity++;
   } else {
-    cart.push({ ...item, quantity: 1 });
+   const newItem = products.find(item => item.id === productId);
+    if(newItem){
+      cart.push({...newItem, quantity:1});
+    }
   }
   updateCart();
 }
@@ -1842,7 +1845,7 @@ function removeFromCart(id) {
 function updateCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
   const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
-  cartValue.textContent = totalQty;
+  cartValue.innerHTML = cart.length;
   cartList.innerHTML = "";
   cart.forEach(item => {
     const row = document.createElement("div");
@@ -1851,7 +1854,7 @@ function updateCart() {
       <div class="item-image"><img src="${item.thumbnail}" alt="${item.title}"></div>
       <div style="flex:1">
         <h4>${item.title}</h4>
-        <h4 class="item-total">$${(item.price * item.quantity).toFixed(2)}</h4>
+        <h4 class="item-total">Rs${(item.price * item.quantity).toFixed(2)}</h4>
       </div>
       <div class="flex">
         <a href="#" class="quantity-btn decrease" data-id="${item.id}"><i class="fa-solid fa-minus"></i></a>
@@ -1863,7 +1866,7 @@ function updateCart() {
     cartList.appendChild(row);
   });
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  cartTotal.textContent = `$${total.toFixed(2)}`;
+  cartTotal.textContent = `Rs${total.toFixed(2)}`;
 }
 
 document.addEventListener("click", (e) => {
