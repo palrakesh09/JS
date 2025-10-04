@@ -252,6 +252,14 @@ h3{
     background: none;
     border: none;
 }
+/* Add discount message style */
+.discount-msg {
+  font-size: 1rem;
+  color: green;
+  display: block;
+  margin-top: 0.5rem;
+}
+
 
 @media (max-width: 780px) {
 
@@ -287,6 +295,9 @@ h3{
     .mobile-menu-active {
         left: 50%;
         transform: translateX(-50%);
+        top: 40%;
+        width: 25rem;
+        padding: 3rem;
     }
 }
 
@@ -298,9 +309,4 @@ h3{
     .order-card img {
         max-width: 150px;
     }
-<<<<<<< HEAD
-    
 }
-=======
-}
->>>>>>> 7d5bbade7395fed06e39cd18471d2ee4513031ca

@@ -1804,6 +1804,9 @@ const cartTotal = document.querySelector(".cart-total");
 const cartValue = document.querySelector(".cart-value");
 const closeBtn = document.querySelector(".close-btn");
 const cartIcon = document.querySelector(".cart-icon");
+const discountMsg = document.querySelector(".discount-msg");
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -1866,7 +1869,15 @@ function updateCart() {
     cartList.appendChild(row);
   });
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  cartTotal.textContent = `Rs${total.toFixed(2)}`;
+    // Apply discount if above 500
+  if (total > 500) {
+    const discounted = total * 0.8;
+    cartTotal.textContent = `Rs${discounted.toFixed(2)}`;
+    discountMsg.textContent = `20% Discount Applied! (Original: Rs${total.toFixed(2)})`;
+  } else {
+    cartTotal.textContent = `Rs${total.toFixed(2)}`;
+    discountMsg.textContent = "";
+  }
 }
 
 document.addEventListener("click", (e) => {
@@ -1895,5 +1906,12 @@ document.addEventListener("click", (e) => {
 
 cartIcon.addEventListener("click", (e) => { e.preventDefault(); cartTab.classList.toggle("cart-tab-active"); });
 closeBtn.addEventListener("click", (e) => { e.preventDefault(); cartTab.classList.remove("cart-tab-active"); });
+
+// Mobile menu toggle
+hamburger.addEventListener("click", (e) => {
+  e.preventDefault();
+  mobileMenu.classList.toggle("mobile-menu-active");
+});
+
 
 updateCart();
